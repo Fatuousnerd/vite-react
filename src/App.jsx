@@ -2,7 +2,6 @@ import Main from "./components/Main";
 import ThemeProvider from "./utils/ThemeContext";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import './index.css';
 
 function App() {
   return (
