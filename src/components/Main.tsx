@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { GitHub, Code, Brightness4, Brightness7 } from "@mui/icons-material";
 import { useTheme } from "../utils/ThemeContext";
+import { Moon, Sun, Code } from "lucide-react";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 
 const Main = () => {
   const { theme, toggleTheme } = useTheme();
@@ -23,9 +24,9 @@ const Main = () => {
         aria-label="Toggle Theme"
       >
         {theme === "dark" ? (
-          <Brightness7 className="text-[var(--MainText)] group-hover:text-[var(--HText)] transition-colors" />
+          <Sun className="text-[var(--MainText)] group-hover:text-[var(--HText)] transition-colors" />
         ) : (
-          <Brightness4 className="text-[var(--MainText)] group-hover:text-[var(--HText)] transition-colors" />
+          <Moon className="text-[var(--MainText)] group-hover:text-[var(--HText)] transition-colors" />
         )}
       </motion.button>
 
@@ -97,7 +98,7 @@ const Main = () => {
             rel="noopener noreferrer"
             className="group flex items-center justify-center gap-2 px-6 py-3 bg-[var(--MainText)] text-[var(--MainBg)] rounded-lg font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
-            <GitHub fontSize="small" />
+            <SiGithub fontSize="small" />
             <span>Fatuousnerd</span>
           </a>
 

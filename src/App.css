@@ -3,11 +3,10 @@
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
 @import "@fontsource-variable/inter";
+@import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
 
-@tailwind base;
-@tailwind components;
 @tailwind utilities;
 
 :root {
@@ -80,8 +79,6 @@ html {
 
 * {
   scroll-behavior: smooth;
-  padding: 0;
-  margin: 0;
   box-sizing: border-box;
   font-family: "Roboto Condensed", sans-serif;
   letter-spacing: 0.1rem;
@@ -92,47 +89,6 @@ body {
   color: var(--MainText);
   min-height: 100vh;
   transition: all ease-in-out 0.5s;
-}
-
-body::-webkit-scrollbar {
-  display: none;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-section {
-  height: 100vh;
-  scroll-snap-align: center;
-}
-
-li {
-  list-style: none;
-}
-
-li > a:hover {
-  color: var(--HText);
-  transform: scale(1.25);
-  transition: all ease-out 0.25s;
-}
-
-button {
-  cursor: pointer;
-}
-
-input,
-button {
-  outline: none;
-}
-
-span {
-  color: var(--HText);
-}
-
-.nobar::-webkit-scrollbar {
-  display: none;
 }
 
 @theme inline {
