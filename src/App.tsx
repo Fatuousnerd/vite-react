@@ -1,7 +1,7 @@
 import Main from "./components/Main";
 import ThemeProvider from "./utils/ThemeContext";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from "react-router";
+import "./App.css";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         </Router>
       </ThemeProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
