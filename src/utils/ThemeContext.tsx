@@ -6,7 +6,7 @@ import {
   ReactNode,
   useContext,
 } from "react";
-import { ThemeType } from "../config/Interfaces";
+import { ThemeType } from "../config/Types";
 
 export const ThemeContext = createContext<ThemeType | undefined>(undefined);
 
