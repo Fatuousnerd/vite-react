@@ -1,12 +1,12 @@
 import Cookies from "js-cookie";
 import {
   createContext,
-  useState,
-  useEffect,
-  ReactNode,
+  type ReactNode,
   useContext,
+  useEffect,
+  useState,
 } from "react";
-import { ThemeType } from "../config/Types";
+import type { ThemeType } from "../config/Types";
 
 export const ThemeContext = createContext<ThemeType | undefined>(undefined);
 
@@ -15,7 +15,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
+      "(prefers-color-scheme: dark)",
     ).matches;
     const themeGet = Cookies.get("theme");
 

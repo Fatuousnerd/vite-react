@@ -1,17 +1,17 @@
-import { motion } from "framer-motion";
-import { useTheme } from "../utils/ThemeContext";
-import { Moon, Sun, Code } from "lucide-react";
 import { SiGithub } from "@icons-pack/react-simple-icons";
+import { motion } from "framer-motion";
+import { Code, Moon, Sun } from "lucide-react";
+import { useTheme } from "../utils/ThemeContext";
 
 const Main = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-[var(--MainBg)] text-[var(--MainText)] transition-colors duration-500">
+    <div className="min-h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-(--MainBg) text-(--MainText) transition-colors duration-500">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-[var(--HText)] opacity-[0.05] blur-[100px]" />
-        <div className="absolute top-[40%] -right-[10%] w-[40%] h-[40%] rounded-full bg-[var(--HText)] opacity-[0.03] blur-[100px]" />
+        <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-(--HText) opacity-[0.05] blur-[100px]" />
+        <div className="absolute top-[40%] right-[-10%] w-[40%] h-[40%] rounded-full bg-(--HText) opacity-[0.03] blur-[100px]" />
       </div>
 
       {/* Theme Toggle */}
@@ -20,13 +20,13 @@ const Main = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         onClick={toggleTheme}
-        className="absolute top-6 right-6 p-2 rounded-full hover:bg-[var(--SecBg)] transition-all duration-300 group"
+        className="absolute top-6 right-6 p-2 rounded-full hover:bg-(--SecBg) transition-all duration-300 group"
         aria-label="Toggle Theme"
       >
         {theme === "dark" ? (
-          <Sun className="text-[var(--MainText)] group-hover:text-[var(--HText)] transition-colors" />
+          <Sun className="text-(--MainText) group-hover:text-(--HText) transition-colors" />
         ) : (
-          <Moon className="text-[var(--MainText)] group-hover:text-[var(--HText)] transition-colors" />
+          <Moon className="text-(--MainText) group-hover:text-(--HText) transition-colors" />
         )}
       </motion.button>
 
@@ -43,7 +43,7 @@ const Main = () => {
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           className="relative"
         >
-          <div className="absolute inset-0 bg-[var(--HText)] blur-[40px] opacity-20 rounded-full" />
+          <div className="absolute inset-0 bg-(--HText) blur-2xl opacity-20 rounded-full" />
           <img
             src="/vite.svg"
             alt="Vite Logo"
@@ -59,26 +59,23 @@ const Main = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-4xl md:text-6xl font-black tracking-tight"
           >
-            Vite-React <span className="text-[var(--HText)]">Starter</span>
+            Vite-React <span className="text-(--HText)">Starter</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-lg md:text-xl text-[var(--SecText)] font-light leading-relaxed"
+            className="text-lg md:text-xl text-(--SecText) font-light leading-relaxed"
           >
             A clear, opinionated, and high-performance foundation for your next
             web application. Pre-configured with{" "}
-            <span className="font-semibold text-[var(--MainText)]">
-              TypeScript
-            </span>
-            ,{" "}
-            <span className="font-semibold text-[var(--MainText)]">
+            <span className="font-semibold text-(--MainText)">TypeScript</span>,{" "}
+            <span className="font-semibold text-(--MainText)">
               Tailwind CSS
             </span>
             , and{" "}
-            <span className="font-semibold text-[var(--MainText)]">
+            <span className="font-semibold text-(--MainText)">
               Framer Motion
             </span>
             .
@@ -96,7 +93,7 @@ const Main = () => {
             href="https://github.com/Fatuousnerd"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-center gap-2 px-6 py-3 bg-[var(--MainText)] text-[var(--MainBg)] rounded-lg font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            className="group flex items-center justify-center gap-2 px-6 py-3 bg-(--MainText) text-(--MainBg) rounded-lg font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
             <SiGithub fontSize="small" />
             <span>Fatuousnerd</span>
@@ -106,7 +103,7 @@ const Main = () => {
             href="https://github.com/Fatuousnerd/vite-react"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-center gap-2 px-6 py-3 border-2 border-[var(--MainText)] text-[var(--MainText)] rounded-lg font-bold hover:bg-[var(--MainText)] hover:text-[var(--MainBg)] transition-all duration-300"
+            className="group flex items-center justify-center gap-2 px-6 py-3 border-2 border-(--MainText) text-(--MainText) rounded-lg font-bold hover:bg-(--MainText) hover:text-(--MainBg) transition-all duration-300"
           >
             <Code fontSize="small" />
             <span>View Repository</span>
@@ -119,14 +116,14 @@ const Main = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-8 flex flex-wrap justify-center gap-6 text-[var(--SecText)] text-sm font-medium tracking-widest uppercase"
+        className="absolute bottom-8 flex flex-wrap justify-center gap-6 text-(--SecText) text-sm font-medium tracking-widest uppercase"
       >
         <span>Vite</span>
-        <span className="text-[var(--HText)]">•</span>
+        <span className="text-(--HText)">•</span>
         <span>React</span>
-        <span className="text-[var(--HText)]">•</span>
+        <span className="text-(--HText)">•</span>
         <span>TypeScript</span>
-        <span className="text-[var(--HText)]">•</span>
+        <span className="text-(--HText)">•</span>
         <span>Tailwind</span>
       </motion.div>
     </div>

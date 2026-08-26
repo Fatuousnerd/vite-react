@@ -1,19 +1,23 @@
-import Main from "./components/Main";
-import ThemeProvider from "./utils/ThemeContext";
-import { BrowserRouter as Router, Route, Routes } from "react-router";
+import { RouterProvider } from "react-router";
 import "./App.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Cookies from "js-cookie";
+import { router } from "@/lib/router";
+import { SidebarProvider } from "./components/ui/sidebar";
+import { TooltipProvider } from "./components/ui/tooltip";
 
 function App() {
+  const defaultOpen = Cookies.get("sidebar_state") === "true";
+  const queryClient = new QueryClient();
+
   return (
-    <>
-      <ThemeProvider>
-        <Router>
-          <Routes>
-            <Route path="/" element={<Main />} />
-          </Routes>
-        </Router>
-      </ThemeProvider>
-    </>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <SidebarProvider defaultOpen={defaultOpen}>
+          <RouterProvider router={router} />
+        </SidebarProvider>
+      </TooltipProvider>
+    </QueryClientProvider>
   );
 }
 
