@@ -7,18 +7,18 @@ import { SidebarProvider } from "./components/ui/sidebar";
 import { TooltipProvider } from "./components/ui/tooltip";
 
 function App() {
-  const defaultOpen = Cookies.get("sidebar_state") === "true";
-  const queryClient = new QueryClient();
+	const defaultOpen = Cookies.get("sidebar_state") === "true";
+	const queryClient = new QueryClient();
 
-  return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <SidebarProvider defaultOpen={defaultOpen}>
-          <RouterProvider router={router} />
-        </SidebarProvider>
-      </TooltipProvider>
-    </QueryClientProvider>
-  );
+	return (
+		<QueryClientProvider client={queryClient}>
+			<TooltipProvider>
+				<SidebarProvider defaultOpen={defaultOpen}>
+					<RouterProvider router={router} />
+				</SidebarProvider>
+			</TooltipProvider>
+		</QueryClientProvider>
+	);
 }
 
 export default App;

@@ -3,14 +3,14 @@ import Loading from "@/components/Loading";
 import { useUser } from "@/hooks/useUser";
 
 export const ProtectedLayout = () => {
-  const { user, loading } = useUser();
-  const location = useLocation();
+	const { user, loading } = useUser();
+	const location = useLocation();
 
-  if (loading) return <Loading />;
+	if (loading) return <Loading />;
 
-  if (!user) return <Navigate to={"auth"} replace state={{ from: location }} />;
+	if (!user) return <Navigate to={"auth"} replace state={{ from: location }} />;
 
-  return <Outlet />;
+	return <Outlet />;
 };
 
 export default ProtectedLayout;
